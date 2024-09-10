@@ -29,9 +29,19 @@ public class ReadProductsData {
         {
             line=bufferedReader.readLine();
             if (line != null) {
+                String[] split =line.split(",");
+                Products products = new Products();
+                products.setProductName(split[0]);
+                products.setProductId(split[1]);
+                products.setProductPrice(Integer.parseInt(split[2]));
+                products.setProductWeight(split[3]);
+                products.setProductDetails(split[4]);
+
+                productsData[indexofproductsData]=products;
+                indexofproductsData++;
 
             }
         }
-
+     return productsData;
     }
 }

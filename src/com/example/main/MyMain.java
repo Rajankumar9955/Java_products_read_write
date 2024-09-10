@@ -4,6 +4,7 @@ import com.example.bean.Products;
 import com.example.io.ReadProductsData;
 
 import java.io.File;
+import java.io.IOException;
 
 public class MyMain {
     public static void main(String[] args) {
@@ -11,12 +12,18 @@ public class MyMain {
         String fileName="resources/products.csv";
         try {
             Products[] products=readProductsData.readdata(fileName);
-            for(Students elements:Students)
+            for(Products elements:products)
+            {
+
+            }
             {
 
             }
 
 
+        }catch (IOException e)
+        {
+            System.err.println(e.getMessage());
         }
     }
 }
